@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>Login</title>
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+</head>
+<body>
+	<nav class="navbar navbar-default">
+		<div class="container-fluid">
+			<div class="navbar-header">
+				<a class="navbar-brand" href="#">CustomerAPP</a>
+			</div>
+			<ul class="nav navbar-nav navbar-right"
+				th:unless="${username} == null">
+				<li><a href="#"><span class="glyphicon glyphicon-user"></span>
+						Admin</a></li>
+				<li><a href="#"><span class="glyphicon glyphicon-log-out"></span>
+						Logout</a></li>
+			</ul>
+			<ul class="nav navbar-nav navbar-right">
+				<li><a href="login"><span
+						class="glyphicon glyphicon-log-in"></span> Login</a></li>
+			</ul>
+		</div>
+	</nav>
+
+	<div class="container"
+		style="width: 400px; background-color: white; padding: 10px; margin-top: 60px; box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19)">
+		<fieldset>
+			<legend style="text-align: center">Login Form</legend>
+			<form action="login_action" method="POST">
+				<div class="form-floating mb-3">
+					<input type="text" name="username" class="form-control"
+						id="floatingInput" placeholder="Username">
+				</div>
+				<br>
+				<div class="form-floating mb-3">
+					<input type="password" name="password" class="form-control"
+						id="floatingInput" placeholder="Password">
+				</div>
+				<br> <input type="submit" value="Login"
+					class="btn btn-primary sm" />
+			</form>
+		</fieldset>
+	</div>
+</body>
+</html>
